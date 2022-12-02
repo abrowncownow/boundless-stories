@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boundless</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header class="display-flex justify-space-between align-center p-2">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <img src="./assets/images/logo.png" class="image is-64x64 m-1 ml-2">
+              <a class="navbar-item" href="/">
+                <span class="title">Boundless</span>
+              </a>
+            </div>
+
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    {{#if logged_in}}
+                    <a class="button is-primary" id="profile" href="/profile">Profile</a>
+                    <a class="button is-dark" id="logout" href="/logout">Logout</a>
+                    {{else}}
+                    <a class="button is-dark" id="login" href="/login">Login</a>
+                    <a class="button is-primary signup-button" href="/sign-up">Sign up</a>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+          </nav>
+    </header>
+
+
+    <main class="container">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Boundless</strong> by <a href="">InkSlingers</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. See more of our projects <a href="">here</a>.
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</body>
+
+</html>
